@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Django Website</title>
+    <link rel="stylesheet" href="first.css">
+</head>
+
+<body>
+<h1>This Is my about</h1>
+<form action='/about' method='post'> {% csrf_token %}
+<textarea name="text" placeholder='Type Something Here..' style="margin: 0px; width: 1333px; height: 145px;"></textarea>
+    <input name='removePunc' type="checkbox">Remove Punctuation<br>
+    <input name='capitalize' type="checkbox">UPPERCASE<br>
+    <input name='newlineremover' type="checkbox">New Line Remover<br>
+    <input name='spaceremover' type="checkbox">Space Remover<br>
+    <input name='charcount' type="checkbox">Character Count<br>
+<button type='submit'>Click Me</button></form>
+
+</body>
+</html>
