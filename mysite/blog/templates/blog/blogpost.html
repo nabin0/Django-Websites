@@ -1,0 +1,20 @@
+{% extends 'blog/basic.html' %}
+{% block body %}
+
+
+<div class="container my-4">
+<article class="blog-post">
+        <h2 class="blog-post-title">{{post.title}}</h2><hr>
+                <div class="fb-like my-4" data-href="http://127.0.0.1:8000/blog/blogpost/1" data-width="" data-layout="standard" data-action="like" data-size="large" data-share="true"></div>
+        <p class="blog-post-meta">{{post.post_date}} <a href="http://nabin.rf.gd">Nabin</a></p>
+        <h1>{{post.heading0}}</h1>
+        <p>{{post.content_heading0}}</p>
+        <h2>{{post.heading1}}</h2>
+        <p>{{post.content_heading1}}</p>
+        <h3>{{post.heading2}}</h3>
+        <p>{{post.content_heading2}}</p>
+        <div class="fb-comments" data-href="http://127.0.0.1:8000/blog/blogpost/3" data-width="" data-numposts="5"></div>
+      </article>
+</div>
+
+{% endblock %}

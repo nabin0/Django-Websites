@@ -1,0 +1,53 @@
+{% extends 'shop/basic.html' %}
+{% block title %} Contact Us | My Shop {% endblock %}
+{% block body %}
+
+
+
+<div class="container my-5">
+<form method="post" action="/shop/contact/"> {% csrf_token %}
+
+  <div class="row mb-3">
+    <label for="name" class="col-sm-2 col-form-label">Name</label>
+    <div class="col-sm-10">
+      <input type="text" name="name" class="form-control" id="name" placeholder="Enter Your Name Here..">
+    </div>
+  </div>
+  <div class="row mb-3">
+    <label for="email" class="col-sm-2 col-form-label">Email</label>
+    <div class="col-sm-10">
+      <input type="email" name="email" class="form-control" id="email">
+    </div>
+  </div>
+  <div class="row mb-3">
+    <label for="phone" class="col-sm-2 col-form-label">Phone</label>
+    <div class="col-sm-10">
+      <input type="tel" name="phone" class="form-control" id="phone">
+    </div>
+  </div>
+
+    <div class="mb-3">
+  <label for="desc" class="form-label">Enter Your Query Here: </label>
+  <textarea class="form-control" name="desc" id="desc" rows="3" style="height: 191px;"></textarea>
+</div>
+
+  <button type="submit" class="btn btn-secondary">Sign in</button>
+</form>
+
+
+</div>
+
+
+
+{% endblock %}
+
+{% block js %}
+{% if contacted %}
+
+alert('Thanks For Contacting Us. We Will Get You Soon.');
+document.getElementById('contacted').innerHTML = str;
+localStorage.clear();
+document.location = '/shop/contact';
+{% endif %}
+
+{% endblock %}
